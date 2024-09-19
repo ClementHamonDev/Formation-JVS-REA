@@ -10,19 +10,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: start;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
+  border-bottom: 1px solid white;
 }
 
 .App-main {
   padding-top: 10px;
-  background-color: #282c34;
+  background-color: #535760;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
