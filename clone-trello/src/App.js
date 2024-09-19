@@ -9,7 +9,9 @@ function App() {
       </header>
       <main className="App-main">
         <h2>Bienvenue à cette formation</h2>
-        <ProjectCard title="Mon 1er props"  description="C'est mon premier projet avec props"/>
+        <ProjectCard title="Mon 1er props"  description="C'est mon premier projet avec props">
+          <p>Utilisation de props.children</p>
+        </ProjectCard>
       </main>
     </div>
   );
