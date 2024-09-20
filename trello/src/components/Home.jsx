@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const Home = ({ boards }) => {
+const Home = () => {
+  const boards = useSelector(state => state.boards.boards);
+  const lists = useSelector(state => state.boards.lists);
+
   return (
     <div className="container mx-auto p-4 pt-8">
       <h1 className="text-3xl font-bold mb-4 text-center text-white">Trello Boards</h1>
@@ -13,7 +17,7 @@ const Home = ({ boards }) => {
             className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"
           >
             <h2 className="text-xl font-semibold text-black">{board.title}</h2>
-            <p className="text-black">{board.lists.length} lists</p>
+            <p className="text-black">{lists.filter(l => l.boardId === board.id).length} lists</p>
           </Link>
         ))}
       </div>
