@@ -16,7 +16,6 @@ function App() {
       id: 2,
       title: "In Progress",
       tasks: [
-        { id: 3, title: "Task 3", description: "Description for Task 3" },
       ]
     },
     {
