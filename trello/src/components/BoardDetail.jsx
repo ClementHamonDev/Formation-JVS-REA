@@ -1,10 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Board from './Board';
 
-const BoardDetail = ({ boards }) => {
+const BoardDetail = () => {
   const { boardId } = useParams();
-  const board = boards.find((b) => b.id === parseInt(boardId));
+  const board = useSelector(state => 
+    state.boards.boards.find(b => b.id === parseInt(boardId))
+  );
 
   if (!board) {
     return <div>Board not found</div>;

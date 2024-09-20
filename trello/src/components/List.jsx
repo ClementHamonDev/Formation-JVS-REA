@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Task from './Task';
 import TaskForm from './TaskForm';
+import { addTask } from '../store/boardSlice';
 
-const List = ({ title, initialTasks }) => {
-  const [tasks, setTasks] = useState(initialTasks);
+const List = ({ title, initialTasks, listId, boardId }) => {
+  console.log({ title, initialTasks, listId, boardId });
   const [message, setMessage] = useState('');
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    if (tasks.length > initialTasks.length) {
-      setMessage('La liste a été modifiée!');
+    if (message) {
       const timer = setTimeout(() => setMessage(''), 3000);
       return () => clearTimeout(timer);
     }
-  }, [tasks, initialTasks.length]);
+  }, [message]);
 
-  const addTask = (newTask) => {
-    setTasks([...tasks, { ...newTask, id: Date.now() }]);
+  const handleAddTask = (newTask) => {
+    dispatch(addTask({ boardId, listId, task: newTask }));
+    setMessage('La liste a été modifiée!');
   };
 
   return (
@@ -23,15 +26,15 @@ const List = ({ title, initialTasks }) => {
       <h2>{title}</h2>
       {message && <p className="text-green-500">{message}</p>}
       <div className="text-lg flex flex-col gap-4 mt-4">
-        {tasks.length === 0 ? (
+        {initialTasks.length === 0 ? (
           <p className="text-white-500">Aucune tâche</p>
         ) : (
-          tasks.map(task => (
+          initialTasks.map(task => (
             <Task key={task.id} title={task.title} description={task.description} />
           ))
         )}
       </div>
-      <TaskForm onAddTask={addTask} />
+      <TaskForm onAddTask={handleAddTask} />
     </div>
   );
 };
