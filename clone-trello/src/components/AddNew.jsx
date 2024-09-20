@@ -6,8 +6,6 @@ export default function AddNew({ type, parentId }) {
   const [inputTitle, setInputTitle] = useState('');
   const [showForm, setShowForm] = useState(false);
   const [cardDeadline, setCardDeadline] = useState(''); // Task deadline
-  const [addBackgroundImage, setAddBackgroundImage] = useState(false); // if card has background image
-  const [cardImage, setCardImage] = useState(''); // Card background image
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {
@@ -16,7 +14,6 @@ export default function AddNew({ type, parentId }) {
 
     if (type == 'card') {
       let cardInfo = { title: inputTitle, id: Date.now(), parentId };
-      if (cardImage) cardInfo.image = cardImage;
       if (cardDeadline) {
         const dateObj = new Date(cardDeadline);
 
@@ -27,14 +24,7 @@ export default function AddNew({ type, parentId }) {
           cardInfo.deadline = formattedDate;
         }
       }
-
-      if (addBackgroundImage) {
-        const seed = Math.floor(Math.random() * 1000);
-        const imageUrl = `https://picsum.photos/100/100?seed=${seed}`;
-        cardInfo.backgroundImage = imageUrl;
-      }
       
-      cardInfo.addBackgroundImage = addBackgroundImage;
 
       const taskProgress = Math.floor(Math.random() * 100);
       cardInfo.taskProgress = taskProgress;
@@ -44,8 +34,6 @@ export default function AddNew({ type, parentId }) {
     }
     hideForm();
     setInputTitle('');
-    setAddBackgroundImage(false);
-    setCardImage('');
     setCardDeadline('');
   };
 
@@ -61,7 +49,6 @@ export default function AddNew({ type, parentId }) {
     setShowForm(false);
     setInputTitle('');
     setCardDeadline('');
-    setAddBackgroundImage(false);
 
   }
 
@@ -69,10 +56,6 @@ export default function AddNew({ type, parentId }) {
     const inputDate = e.target.value;
     setCardDeadline(inputDate);
   }
-
-  const handleCheckboxChange = (e) => {
-    setAddBackgroundImage(e.target.checked);
-  };
 
   return (
     <div className="">
