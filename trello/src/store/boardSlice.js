@@ -42,5 +42,6 @@ const boardsSlice = createSlice({
   },
 });
 
+export { initialState };
 export const { addTask, addList, addBoard } = boardsSlice.actions;
 export default boardsSlice.reducer;
