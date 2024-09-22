@@ -1,4 +1,4 @@
-import boardReducer, { addTask, initialState } from '../boardSlice';
+import boardReducer, { addTask, initialState } from '../store/boardSlice';
 
 describe('boardSlice', () => {
 

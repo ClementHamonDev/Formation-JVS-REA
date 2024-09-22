@@ -10,6 +10,8 @@ const TaskForm = ({ onAddTask }) => {
       onAddTask({ title, description });
       setTitle('');
       setDescription('');
+    } else {
+      alert('Veuillez entrer un titre et une description');
     }
   };
 
