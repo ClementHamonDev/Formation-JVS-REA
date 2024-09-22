@@ -14,7 +14,7 @@ const TaskForm = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-4 text-center text-bas">
+    <form onSubmit={handleSubmit} className="mt-4 text-center text-base border-2 border-white rounded-lg p-4">
       <input
         type="text"
         value={title}
