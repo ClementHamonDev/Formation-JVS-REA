@@ -16,5 +16,6 @@ const { apiResponse } = require('./11_async');
  */
 
 
+const parallel = async () => undefined
 
 module.exports = { parallel };

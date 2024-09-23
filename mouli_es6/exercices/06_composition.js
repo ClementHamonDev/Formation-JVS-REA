@@ -8,6 +8,7 @@
  *  - for, foreach, while, do while sont interdits
  */
 
+const concat = () => undefined
 
 /**
  * utiliser l'opérateur de composition ... afin d'ajouter un élément à un tableau
@@ -18,14 +19,14 @@
  * - ne pas utiliser la méthode push
  */
 
-
+const push = () => undefined
 /**
  * utiliser l'opérateur de composition ... afin de fusionner 2 objets passés en paramètres
  * 
  * ex: {a: 1, b: 2}, {c: 3, d: 4} => {a: 1, b: 2, c: 3, d: 4}
  */
 
-
+const merge = () => undefined
 
 /**
  * utiliser l'opérateur de composition ... afin de modifier la propriété name de l'objet
@@ -36,7 +37,7 @@
  *  - interdiction d'utiliser l'opérateur d'affectation "="
  */
 
-
+const setName = () => undefined
 
 // console.log( setName( {name: 'toto'}, 'titi'  ) ) // {name : 'titi'}
 

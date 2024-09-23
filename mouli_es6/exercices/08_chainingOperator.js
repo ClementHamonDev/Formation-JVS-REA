@@ -15,7 +15,7 @@
  *
  */
 
-
+const getGroupName = () => undefined;
 
 
 

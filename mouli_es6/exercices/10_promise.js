@@ -5,6 +5,6 @@
  * utilisez new Promise
  */
 
-
+const sleep = () => undefined
 
 module.exports = {sleep};
