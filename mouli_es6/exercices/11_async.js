@@ -11,7 +11,7 @@ const {sleep} = require("../exercices/10_promise");
  *    - ne pas utiliser async await
  * 
  */
-const usingThen = () => undefined
+const usingThen = (cb) => sleep().then(cb)
 
 
 /**
@@ -25,8 +25,12 @@ const usingThen = () => undefined
  *   - ne pas utiliser .then
  */
 
-const usingAwait = async () => {
-    
+const usingAwait = async (cb) => {
+    try{
+        await sleep()
+        cb()
+
+    }catch(err){}
 }
 
 /**
@@ -44,8 +48,11 @@ const usingAwait = async () => {
 //décommentez la ligne suivante une fois le package installé
 const axios = require("axios");
 
-const apiResponse = async () => {
-    
+const apiResponse = async (url) => {
+
+    const response = await axios.get(url)
+
+    return response.data
 }
 
 
