@@ -26,6 +26,7 @@ import ContactForm from './components/Exercices Hook/ContactForm';
 import ContactFormWithRef from './components/Exercices Hook/ContactFormWithRef ';
 import StoreCounter from './components/Exercices Store/StoreCounter';
 import TaskList from './components/Exercices Store/TaskList';
+import UserData from './components/Exercices Hook/UserData';
 
 function App() {
   return (
@@ -112,6 +113,7 @@ function App() {
           <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>
             <Counter />
             <DocumentTitle />
+            <UserData/>
             <ContactForm />
             <ContactFormWithRef />
           </div>
