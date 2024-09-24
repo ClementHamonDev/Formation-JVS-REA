@@ -5,23 +5,31 @@ function UserData() {
   const [loading, setLoading] = useState(false);    // Pour gérer l'état de chargement
   const [error, setError] = useState(null);         // Pour gérer les erreurs éventuelles
 
-  // Fonction qui simule l'appel de l'API pour charger les données utilisateur
+  // Fonction déclenchée par le bouton qui démarre le processus de chargement
   const fetchUserData = () => {
-    setLoading(true);  // On indique que le chargement commence
+    setLoading(true);  // On déclenche le chargement en changeant l'état
     setError(null);    // On réinitialise l'état des erreurs
-
-    // Simuler un appel API avec un délai de 2 secondes
-    setTimeout(() => {
-      try {
-        const data = { name: 'John Doe', email: 'john.doe@example.com' };
-        setUserData(data);    // On met à jour les données utilisateur
-        setLoading(false);    // Le chargement est terminé
-      } catch (err) {
-        setError('Erreur lors du chargement des données');
-        setLoading(false);
-      }
-    }, 2000);
   };
+
+  // useEffect pour surveiller l'état de chargement
+  useEffect(() => {
+    if (loading) {
+      // Simuler un appel API avec un délai de 2 secondes
+      const timer = setTimeout(() => {
+        try {
+          const data = { name: 'John Doe', email: 'john.doe@example.com' };
+          setUserData(data);    // On met à jour les données utilisateur
+          setLoading(false);    // Le chargement est terminé
+        } catch (err) {
+          setError('Erreur lors du chargement des données');
+          setLoading(false);
+        }
+      }, 2000);
+
+      // Nettoyage du timeout en cas de démontage du composant
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);  // Se déclenche seulement quand `loading` change
 
   return (
     <div>
