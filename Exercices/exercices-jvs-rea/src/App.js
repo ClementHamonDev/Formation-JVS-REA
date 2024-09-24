@@ -28,6 +28,7 @@ import StoreCounter from './components/Exercices Store/StoreCounter';
 import TaskList from './components/Exercices Store/TaskList';
 import UserData from './components/Exercices Hook/UserData';
 import CounterWithTitle from './components/Exercices Hook/CounterWithTitle';
+import MouseTracker from './components/Exercices Hook/MouseTracker';
 
 function App() {
   return (
@@ -118,6 +119,7 @@ function App() {
             <ContactForm />
             <ContactFormWithRef />
             <CounterWithTitle/>
+            <MouseTracker/>
           </div>
         </section>
         <section>
