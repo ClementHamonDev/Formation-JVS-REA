@@ -27,6 +27,7 @@ import ContactFormWithRef from './components/Exercices Hook/ContactFormWithRef '
 import StoreCounter from './components/Exercices Store/StoreCounter';
 import TaskList from './components/Exercices Store/TaskList';
 import UserData from './components/Exercices Hook/UserData';
+import CounterWithTitle from './components/Exercices Hook/CounterWithTitle';
 
 function App() {
   return (
@@ -116,6 +117,7 @@ function App() {
             <UserData/>
             <ContactForm />
             <ContactFormWithRef />
+            <CounterWithTitle/>
           </div>
         </section>
         <section>
