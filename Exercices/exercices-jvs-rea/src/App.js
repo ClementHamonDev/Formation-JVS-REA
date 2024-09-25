@@ -29,6 +29,7 @@ import TaskList from './components/Exercices Store/TaskList';
 import UserData from './components/Exercices Hook/UserData';
 import CounterWithTitle from './components/Exercices Hook/CounterWithTitle';
 import MouseTracker from './components/Exercices Hook/MouseTracker';
+import ProfileForm from './components/Exercices Store/ProfileForm';
 
 function App() {
   return (
@@ -127,6 +128,7 @@ function App() {
           <div>
             <StoreCounter/>
             <TaskList/>
+            <ProfileForm/>
           </div>
         </section>
         <h1 style={{ textDecoration: "underline", marginTop: "100px" }}>Exercice 10</h1>
